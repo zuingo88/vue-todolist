@@ -12,7 +12,7 @@ function initVue() {
     },
     methods: {
         newTodo: function() {
-            if (this.newEl.length > 0) {
+            if (this.newEl) {
                this.list.push(this.newEl);
                this.newEl = '';
             }
