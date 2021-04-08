@@ -35,11 +35,12 @@
       </div>
       <div class="new-todo">
         <input class="todo" type="text" placeholder="Inserisci il tuo promemoria" v-model="newEl" @keyup.enter="newTodo">
-        <button class="fas fa-times" @click="newTodo">Metti nella lista</button>
+        <button @click="newTodo">  Aggiungi alla lista <i class="fas fa-plus-square"></i></button>
       </div>
       <div class="todos-container">
         <ul v-if="list.length > 0">
           <li v-for="(el, index) in list" class="todo">
+              {{ index + 1 }}
               {{ el }}
               <i class="fas fa-times cursor-pointer" @click="deleteEl(index)"></i>
           </li>
