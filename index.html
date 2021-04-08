@@ -26,5 +26,26 @@
     <!-- my js -->
     <script src="js/script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <div id="app" class="container">
+      <div class="row">
+        <div class="logo">
+          <img src="img/logo.png" alt="" />
+        </div>
+      </div>
+      <div class="new-todo">
+        <input class="todo" type="text" placeholder="Inserisci il tuo promemoria" v-model="newEl" @keyup.enter="newTodo">
+        <button class="fas fa-times" @click="newTodo">Metti nella lista</button>
+      </div>
+      <div class="todos-container">
+        <ul v-if="list.length > 0">
+          <li v-for="(el, index) in list" class="todo">
+              {{ el }}
+              <i class="fas fa-times cursor-pointer" @click="deleteEl(index)"></i>
+          </li>
+        </ul>
+        <h3 v-else>Lista vuota</h3>
+      </div>
+    </div>
+  </body>
 </html>
